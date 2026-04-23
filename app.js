@@ -2,6 +2,10 @@ const { App } = require("@slack/bolt");
 const Anthropic = require("@anthropic-ai/sdk");
 const axios = require("axios");
 
+console.log("APP TOKEN:", process.env.SLACK_APP_TOKEN ? "found" : "MISSING");
+console.log("BOT TOKEN:", process.env.SLACK_BOT_TOKEN ? "found" : "MISSING");
+console.log("SIGNING:", process.env.SLACK_SIGNING_SECRET ? "found" : "MISSING");
+
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
